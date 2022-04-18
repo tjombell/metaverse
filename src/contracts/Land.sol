@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract Land is ERC721 {
     uint256 public cost = 1 ether;
-    uint256 public maxSupply = 5;
+    uint256 public maxSupply = 13;
     uint256 public totalSupply = 0;
 
     struct Building {
@@ -28,19 +28,22 @@ contract Land is ERC721 {
     ) ERC721(_name, _symbol) {
         cost = _cost;
 
-        buildings.push(
-            Building("City Hall", address(0x0), 0, 0, 0, 10, 10, 10)
-        );
-        buildings.push(Building("Stadium", address(0x0), 0, 10, 0, 10, 5, 3));
-        buildings.push(
-            Building("University", address(0x0), 0, -10, 0, 10, 5, 3)
-        );
-        buildings.push(
-            Building("Shopping Plaza 1", address(0x0), 10, 0, 0, 5, 25, 5)
-        );
-        buildings.push(
-            Building("Shopping Plaza 2", address(0x0), -10, 0, 0, 5, 25, 5)
-        );
+        buildings.push(Building("Lot 001 VIP", address(0x0), 0, 0, 0, 10, 10, 10));
+
+        buildings.push(Building("Lot 002 premium", address(0x0), 0, 10, 0, 10, 5, 3));
+        buildings.push(Building("Lot 003 premium", address(0x0), 0, -10, 0, 10, 5, 3));
+        buildings.push(Building("Lot 004 premium", address(0x0), 10, 0, 0, 5, 25, 5));
+        buildings.push(Building("Lot 005 premium", address(0x0), -10, 0, 0, 5, 25, 5));
+
+        buildings.push(Building("Lot 006", address(0x0), 0, 18, 0, 10, 5, 3));
+        buildings.push(Building("Lot 007", address(0x0), 0, -18, 0, 10, 5, 3));
+        buildings.push(Building("Lot 008", address(0x0), 18, 0, 0, 5, 25, 5));
+        buildings.push(Building("Lot 009", address(0x0), -18, 0, 0, 5, 25, 5));
+
+        buildings.push(Building("Lot 010", address(0x0), 14, 18, 0, 13, 5, 3));
+        buildings.push(Building("Lot 011", address(0x0), -14, -18, 0, 13, 5, 3));
+        buildings.push(Building("Lot 012", address(0x0), 14, -18, 0, 13, 5, 3));
+        buildings.push(Building("Lot 013", address(0x0), -14, 18, 0, 13, 5, 3));
     }
 
     function mint(uint256 _id) public payable {

@@ -150,20 +150,20 @@ function App() {
 						</div>
 
 						<div className='info--owner'>
-							<h2>Owner</h2>
+							<h2>Proprietaire</h2>
 							<p>{landOwner}</p>
 						</div>
 
 						{!hasOwner && (
 							<div className='info--owner'>
-								<h2>Cost</h2>
+								<h2>Prix</h2>
 								<p>{`${cost} ETH`}</p>
 							</div>
 						)}
 					</div>
 
 					{!hasOwner && (
-						<button onClick={() => buyHandler(landId)} className='button info--buy'>Buy Property</button>
+						<button onClick={() => buyHandler(landId)} className='button info--buy'>Achetez</button>
 					)}
 				</div>
 			)}
